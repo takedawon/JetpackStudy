@@ -17,16 +17,16 @@ import javax.inject.Named
 class NetworkModule {
 
     companion object {
-        private const val TIME_OUT:Long = 15
+        private const val TIME_OUT: Long = 15
         private val TRAVEL_URL =
-            if(BuildConfig.DEBUG) "http://api.visitkorea.or.kr/openapi/service/" else "http://api.visitkorea.or.kr/openapi/service/"
+            if (BuildConfig.DEBUG) "http://api.visitkorea.or.kr/openapi/service/" else "http://api.visitkorea.or.kr/openapi/service/"
     }
 
     @Provides
     @Named("travelRetrofit")
     fun provideTravelRetrofit(
         @Named("okHttpClient") okHttpClient: OkHttpClient
-    ):Retrofit {
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(TRAVEL_URL)
             .client(okHttpClient)
@@ -38,8 +38,8 @@ class NetworkModule {
     @Provides
     @Named("okHttpClient")
     fun provideOkHttp3(
-        logger:HttpLoggingInterceptor
-    ):OkHttpClient {
+        logger: HttpLoggingInterceptor
+    ): OkHttpClient {
         return OkHttpClient().newBuilder()
             .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT, TimeUnit.SECONDS)
@@ -48,9 +48,9 @@ class NetworkModule {
     }
 
     @Provides
-    fun provideHttpLoggingInterceptor():HttpLoggingInterceptor {
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            if(BuildConfig.DEBUG)
+            if (BuildConfig.DEBUG)
                 level = HttpLoggingInterceptor.Level.BODY
         }
     }

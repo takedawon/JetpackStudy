@@ -1,21 +1,15 @@
 package com.example.study.data
 
-import android.view.KeyEvent
-import com.example.study.data.datasource.MemberDataSource
-import com.example.study.network.response.MemberInfoResponse
 import com.example.study.network.response.TravelResponse
 import com.example.study.network.service.TravelService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import okhttp3.Dispatcher
-import retrofit2.http.Query
-import javax.inject.Inject
 
 class RemoteRepositoryImpl(
     private val travelService: TravelService
-):RemoteRepository {
+) : RemoteRepository {
     override fun getTravelInfo(
         serviceKey: String,
         numOfRows: Int,
@@ -28,7 +22,7 @@ class RemoteRepositoryImpl(
         mapY: String,
         radius: String,
         listYN: String,
-        type:String
+        type: String
     ): Flow<TravelResponse.Response.Body.Items> {
         return flow {
             emit(
@@ -49,17 +43,17 @@ class RemoteRepositoryImpl(
 
 interface RemoteRepository {
     fun getTravelInfo(
-        serviceKey:String,
-        numOfRows:Int= 10,
-        pageNo:String,
-        mobileOS:String = "AND",
-        mobileApp:String = "TEST",
-        arrange:String,
-        contentTypeId:String = "15",
-        mapX:String,
-        mapY:String,
-        radius:String = "1000",
-        listYN:String = "Y",
-        type:String = "json"
+        serviceKey: String,
+        numOfRows: Int = 10,
+        pageNo: String,
+        mobileOS: String = "AND",
+        mobileApp: String = "TEST",
+        arrange: String,
+        contentTypeId: String = "15",
+        mapX: String,
+        mapY: String,
+        radius: String = "1000",
+        listYN: String = "Y",
+        type: String = "json"
     ): Flow<TravelResponse.Response.Body.Items>
 }

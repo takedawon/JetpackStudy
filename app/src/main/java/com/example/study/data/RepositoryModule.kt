@@ -15,7 +15,7 @@ object RepositoryModule {
     @ActivityRetainedScoped
     fun provideRemoteRepository(
         travelService: TravelService
-    ):RemoteRepository {
+    ): RemoteRepository {
         return RemoteRepositoryImpl(travelService)
     }
 }

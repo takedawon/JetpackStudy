@@ -1,7 +1,6 @@
 package com.example.study.ui
 
 import android.net.Uri
-import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,12 +12,10 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import timber.log.Timber
-import java.lang.reflect.Member
-import javax.inject.Inject
 
 class TestViewModel @ViewModelInject constructor(
-    private val remoteRepository:RemoteRepository
-): ViewModel() {
+    private val remoteRepository: RemoteRepository
+) : ViewModel() {
 
     private val _memberData = MutableLiveData<MemberInfoResponse>()
     val memberData = _memberData

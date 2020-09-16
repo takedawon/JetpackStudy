@@ -1,6 +1,5 @@
 package com.example.study.data.datasource
 
-import com.example.study.network.service.TravelService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +10,12 @@ import dagger.hilt.android.components.ApplicationComponent
 object DataSourceModule {
 
     @Provides
-    fun provideMemberSource():MemberDataSource {
+    fun provideMemberSource(): MemberDataSource {
         return MemberDataSourceImpl()
     }
 
     @Provides
-    fun provideTravelSource():TravelDataSource {
+    fun provideTravelSource(): TravelDataSource {
         return TravelDataSourceImpl()
     }
 }
