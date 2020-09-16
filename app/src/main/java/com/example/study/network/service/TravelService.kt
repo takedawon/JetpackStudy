@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface TravelService {
 
-    @GET("/rest/KorService/locationBasedList")
+    @GET("rest/KorService/locationBasedList")
     suspend fun getTravelInfo(
         @Query("serviceKey") serviceKey:String,
         @Query("numOfRows") numOfRows:Int= 10,
@@ -20,6 +20,7 @@ interface TravelService {
         @Query("mapX") mapX:String,
         @Query("mapY") mapY:String,
         @Query("radius") radius:String = "1000",
-        @Query("listYN") listYN:String = "Y"
+        @Query("listYN") listYN:String = "Y",
+        @Query("_type") type:String = "json"
     ):TravelResponse
 }

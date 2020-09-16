@@ -19,7 +19,7 @@ class NetworkModule {
     companion object {
         private const val TIME_OUT:Long = 15
         private val TRAVEL_URL =
-            if(BuildConfig.DEBUG) "http://api.visitkorea.or.kr/openapi/service" else "http://api.visitkorea.or.kr/openapi/service"
+            if(BuildConfig.DEBUG) "http://api.visitkorea.or.kr/openapi/service/" else "http://api.visitkorea.or.kr/openapi/service/"
     }
 
     @Provides
