@@ -40,7 +40,6 @@ class TestViewModel @ViewModelInject constructor(
             }.collect {
                 Timber.d("테스트 결과 : $it")
             }
-
         }
     }
 }

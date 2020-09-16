@@ -1,3 +1,4 @@
+
 package com.example.study.network.response
 
 data class MemberInfoResponse(

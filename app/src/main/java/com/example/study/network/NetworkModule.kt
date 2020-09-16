@@ -34,7 +34,6 @@ class NetworkModule {
             .build()
     }
 
-
     @Provides
     @Named("okHttpClient")
     fun provideOkHttp3(

@@ -1,6 +1,5 @@
 package com.example.study.network.response
 
-
 import com.google.gson.annotations.SerializedName
 
 data class TravelResponse(

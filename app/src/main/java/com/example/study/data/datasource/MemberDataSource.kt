@@ -11,10 +11,7 @@ class MemberDataSourceImpl : MemberDataSource {
             gender = "남자"
         )
     }
-
-
 }
-
 interface MemberDataSource {
     fun getMemberInfo(): MemberInfoResponse
 }
