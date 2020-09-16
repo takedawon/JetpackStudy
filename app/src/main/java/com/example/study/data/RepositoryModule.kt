@@ -1,11 +1,10 @@
 package com.example.study.data
 
-import com.example.study.data.datasource.MemberDataSource
+import com.example.study.network.service.TravelService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 
 @Module
@@ -15,8 +14,8 @@ object RepositoryModule {
     @Provides
     @ActivityRetainedScoped
     fun provideRemoteRepository(
-        memberDataSource: MemberDataSource
+        travelService: TravelService
     ):RemoteRepository {
-        return RemoteRepositoryImpl(memberDataSource)
+        return RemoteRepositoryImpl(travelService)
     }
 }

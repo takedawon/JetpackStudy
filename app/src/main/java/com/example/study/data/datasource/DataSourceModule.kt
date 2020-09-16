@@ -1,5 +1,6 @@
 package com.example.study.data.datasource
 
+import com.example.study.network.service.TravelService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +13,10 @@ object DataSourceModule {
     @Provides
     fun provideMemberSource():MemberDataSource {
         return MemberDataSourceImpl()
+    }
+
+    @Provides
+    fun provideTravelSource():TravelDataSource {
+        return TravelDataSourceImpl()
     }
 }
