@@ -14,10 +14,10 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-        <TextView
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/container_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{vm.memberData.nickname}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
