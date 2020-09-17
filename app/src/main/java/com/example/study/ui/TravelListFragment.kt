@@ -16,7 +16,6 @@ import com.example.study.base.BaseFragment
 import com.example.study.data.local.TravelEntity
 import com.example.study.databinding.FragmentTravelListBinding
 import com.example.study.databinding.ItemTravelLocationBinding
-import com.example.study.network.response.TravelResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

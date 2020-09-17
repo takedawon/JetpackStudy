@@ -2,12 +2,11 @@ package com.example.study.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "travel")
 data class TravelEntity(
-    @PrimaryKey val id:Int,
+    @PrimaryKey val id: Int,
     @field:SerializedName("addr1")
     val addr1: String,
     @field:SerializedName("addr2")

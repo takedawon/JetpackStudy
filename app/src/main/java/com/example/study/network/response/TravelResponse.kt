@@ -1,6 +1,5 @@
 package com.example.study.network.response
 
-import androidx.room.Entity
 import com.example.study.data.local.TravelEntity
 import com.google.gson.annotations.SerializedName
 

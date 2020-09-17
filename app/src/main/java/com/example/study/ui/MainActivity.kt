@@ -17,6 +17,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = this@MainActivity.testViewModel
-
     }
 }
