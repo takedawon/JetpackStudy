@@ -12,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TravelDetailFragment : BaseFragment<FragmentTravelDetailBinding>(
     layoutRes = R.layout.fragment_travel_detail
-) {`
+) {
 
     private val mainViewModel: TestViewModel by activityViewModels() // 테스트
     private val travelViewModel: TravelViewModel by viewModels()

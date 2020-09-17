@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study.R
 import com.example.study.base.BaseFragment
+import com.example.study.data.local.TravelEntity
 import com.example.study.databinding.FragmentTravelListBinding
 import com.example.study.databinding.ItemTravelLocationBinding
 import com.example.study.network.response.TravelResponse
@@ -43,18 +44,18 @@ class TravelListFragment : BaseFragment<FragmentTravelListBinding>(
 }
 
 class TravelAdapter :
-    ListAdapter<TravelResponse.Response.Body.Items.Item, TravelAdapter.TravelViewHolder>(
-        object : DiffUtil.ItemCallback<TravelResponse.Response.Body.Items.Item>() {
+    ListAdapter<TravelEntity, TravelAdapter.TravelViewHolder>(
+        object : DiffUtil.ItemCallback<TravelEntity>() {
             override fun areItemsTheSame(
-                oldItem: TravelResponse.Response.Body.Items.Item,
-                newItem: TravelResponse.Response.Body.Items.Item
+                oldItem: TravelEntity,
+                newItem: TravelEntity
             ): Boolean {
                 return oldItem == newItem
             }
 
             override fun areContentsTheSame(
-                oldItem: TravelResponse.Response.Body.Items.Item,
-                newItem: TravelResponse.Response.Body.Items.Item
+                oldItem: TravelEntity,
+                newItem: TravelEntity
             ): Boolean {
                 return oldItem == newItem
             }
@@ -80,7 +81,7 @@ class TravelAdapter :
 
     inner class TravelViewHolder(private val binding: ItemTravelLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(travelData: TravelResponse.Response.Body.Items.Item) {
+        fun bind(travelData: TravelEntity) {
             binding.data = travelData
         }
     }

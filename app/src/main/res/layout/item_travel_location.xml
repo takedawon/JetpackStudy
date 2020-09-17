@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.example.study.network.response.TravelResponse.Response.Body.Items.Item" />
+            type="com.example.study.data.local.TravelEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
