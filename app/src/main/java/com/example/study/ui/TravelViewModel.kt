@@ -6,14 +6,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.study.data.RemoteRepository
+import com.example.study.data.local.TravelDao
 import com.example.study.network.response.TravelResponse
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 class TravelViewModel @ViewModelInject constructor(
-    private val remoteRepository: RemoteRepository
+    private val remoteRepository: RemoteRepository,
+    private val dao: TravelDao
 ) : ViewModel() {
 
     private val _travelData = MutableLiveData<TravelResponse.Response.Body.Items>()
@@ -36,6 +40,12 @@ class TravelViewModel @ViewModelInject constructor(
             }.collect {
                 Timber.d("테스트 결과 : $it")
                 _travelData.value = it
+                withContext(Dispatchers.Default) {
+                    it.item.forEach { data ->
+                        dao.insert(data)
+                        Timber.d("여행 정보 : $data")
+                    }
+                }
             }
         }
     }

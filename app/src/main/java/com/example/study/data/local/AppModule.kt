@@ -15,7 +15,13 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context): AppDataBase =
-        Room.databaseBuilder(context, AppDataBase::class.java, "database.db")
+    fun provideDatabase(@ApplicationContext context: Context): AppDataBase {
+        return Room.databaseBuilder(context, AppDataBase::class.java, "database.db")
             .build()
+    }
+
+    @Provides
+    fun provideTravelDao(database: AppDataBase): TravelDao {
+        return database.travelDao()
+    }
 }

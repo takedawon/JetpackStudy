@@ -6,11 +6,11 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "travel")
 data class TravelEntity(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @field:SerializedName("addr1")
     val addr1: String,
     @field:SerializedName("addr2")
-    val addr2: String,
+    val addr2: String? = "",
     @field:SerializedName("areacode")
     val areacode: Int,
     @field:SerializedName("cat1")
