@@ -12,6 +12,7 @@ class MemberDataSourceImpl : MemberDataSource {
         )
     }
 }
+
 interface MemberDataSource {
     fun getMemberInfo(): MemberInfoResponse
 }

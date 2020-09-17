@@ -1,4 +1,3 @@
-
 package com.example.study.data
 
 import com.example.study.network.service.TravelService

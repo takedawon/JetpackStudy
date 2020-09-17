@@ -38,6 +38,7 @@ class RemoteRepositoryImpl(
         }.flowOn(Dispatchers.IO)
     }
 }
+
 interface RemoteRepository {
     fun getTravelInfo(
         serviceKey: String,
