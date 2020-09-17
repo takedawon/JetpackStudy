@@ -13,15 +13,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 ) {
 
     private val testViewModel by viewModels<TestViewModel>()
-    private val travelListFragment by lazy { TravelListFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = this@MainActivity.testViewModel
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container_main, travelListFragment)
-            .commitAllowingStateLoss()
     }
 }
