@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/travelListFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/travelListFragment"
+        android:name="com.example.study.ui.TravelListFragment"
+        android:label="TravelListFragment"
+        tools:layout="@layout/fragment_travel_list">
+        <action
+            android:id="@+id/action_travelListFragment_to_travelDetailFragment"
+            app:destination="@id/travelDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/travelDetailFragment"
+        android:name="com.example.study.ui.TravelDetailFragment"
+        android:label="TravelDetailFragment"
+        tools:layout="@layout/fragment_travel_detail" />
+</navigation>

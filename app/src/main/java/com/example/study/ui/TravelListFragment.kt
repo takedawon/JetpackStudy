@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.study.R
 import com.example.study.base.BaseFragment
-import com.example.study.databinding.FragmentBlankBinding
+import com.example.study.databinding.FragmentTravelListBinding
 import com.example.study.databinding.ItemTravelLocationBinding
 import com.example.study.network.response.TravelResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BlankFragment : BaseFragment<FragmentBlankBinding>(
-    layoutRes = R.layout.fragment_blank
+class TravelListFragment : BaseFragment<FragmentTravelListBinding>(
+    layoutRes = R.layout.fragment_travel_list
 ) {
 
     private val mainViewModel: TestViewModel by activityViewModels() // 테스트

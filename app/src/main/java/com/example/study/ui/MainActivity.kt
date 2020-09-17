@@ -13,7 +13,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 ) {
 
     private val testViewModel by viewModels<TestViewModel>()
-    private val blankFragment by lazy { BlankFragment() }
+    private val travelListFragment by lazy { TravelListFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.container_main, blankFragment)
+            .replace(R.id.container_main, travelListFragment)
             .commitAllowingStateLoss()
     }
 }
