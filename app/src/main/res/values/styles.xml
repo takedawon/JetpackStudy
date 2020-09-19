@@ -7,4 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="InfoBoxView">
+        <attr name="title" format="string" />
+    </declare-styleable>
 </resources>

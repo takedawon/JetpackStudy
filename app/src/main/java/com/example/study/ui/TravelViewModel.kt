@@ -22,6 +22,8 @@ class TravelViewModel @ViewModelInject constructor(
 
     private val _travelData = MutableLiveData<TravelResponse.Response.Body.Items>()
     val travelData = _travelData
+    
+    val menuList= listOf<String>("메뉴","다람","커흑","커스텀뷰","무엇")
 
     init {
         getTravelData()
