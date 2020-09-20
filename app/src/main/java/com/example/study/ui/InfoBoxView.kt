@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.study.R
 import com.example.study.databinding.ItemMenuBinding
 import com.example.study.databinding.ItemMenuMainBinding
+import com.example.study.util.Event
 
 class InfoBoxView @JvmOverloads constructor(
     context: Context,
@@ -28,10 +31,10 @@ class InfoBoxView @JvmOverloads constructor(
         attr.recycle()
     }
 
-    fun setMenuList(data: List<String>?) {
-        data?.let {
+    fun setMenuList(viewModel: TravelViewModel) {
+        viewModel.menuList.let {
             var id: Int? = null
-            data.forEachIndexed { index, it ->
+            viewModel.menuList.forEachIndexed { index, it ->
                 val menuBinding =
                     ItemMenuBinding.inflate(LayoutInflater.from(context), this, false).apply {
                         tvMenu.text = it
@@ -48,9 +51,13 @@ class InfoBoxView @JvmOverloads constructor(
                         it.endToEnd = id as Int
                     }
                 }
-                if(index == data.lastIndex) {
+                if(index == viewModel.menuList.lastIndex) {
                     menuBinding.root.setPadding(0,0,0,15)
                 }
+                menuBinding.root.setOnClickListener {
+                    viewModel.liveDataList[index].value = Event(Unit)
+                }
+
                 binding.parentLayout.addView(menuBinding.root)
                 id = menuBinding.root.id
             }
