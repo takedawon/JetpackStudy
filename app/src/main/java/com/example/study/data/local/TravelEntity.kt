@@ -7,11 +7,11 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "travel")
 data class TravelEntity(
     @field:SerializedName("addr1")
-    val addr1: String,
+    val address1: String,
     @field:SerializedName("addr2")
-    val addr2: String? = "",
+    val address2: String? = "",
     @field:SerializedName("areacode")
-    val areacode: Int,
+    val areaCode: Int,
     @field:SerializedName("cat1")
     val cat1: String,
     @field:SerializedName("cat2")
@@ -20,29 +20,29 @@ data class TravelEntity(
     val cat3: String,
     @PrimaryKey
     @field:SerializedName("contentid")
-    val contentid: Int,
+    val contentId: Int,
     @field:SerializedName("contenttypeid")
-    val contenttypeid: Int,
+    val contentTypeId: Int,
     @field:SerializedName("createdtime")
-    val createdtime: Long,
+    val createdTime: Long,
     @field:SerializedName("dist")
     val dist: Int,
     @field:SerializedName("firstimage")
-    val firstimage: String,
+    val firstImage: String,
     @field:SerializedName("firstimage2")
-    val firstimage2: String,
+    val firstImage2: String,
     @field:SerializedName("mapx")
-    val mapx: String,
+    val mapX: String,
     @field:SerializedName("mapy")
-    val mapy: String,
+    val mapY: String,
     @field:SerializedName("mlevel")
-    val mlevel: Int,
+    val mLevel: Int,
     @field:SerializedName("modifiedtime")
-    val modifiedtime: Long,
+    val modifiedTime: Long,
     @field:SerializedName("readcount")
-    val readcount: Int,
+    val readCount: Int,
     @field:SerializedName("sigungucode")
-    val sigungucode: Int,
+    val siGunGuCode: Int,
     @field:SerializedName("tel")
     val tel: String,
     @field:SerializedName("title")
